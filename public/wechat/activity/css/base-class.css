@@ -1,0 +1,32 @@
+/*手机端尺寸自适应尺寸文件，以640宽度，40px作为最小大小,1px=1/40rem*/
+.tt_flex_center {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.tt_clearfix {
+  display: block;
+  zoom: 1;
+}
+.tt_clearfix:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.tt_overflow_ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tt_line_break {
+  word-break: break-all;
+  /*支持IE，chrome，FF不支持*/
+  word-wrap: break-word;
+  /*支持IE，chrome，FF*/
+}

@@ -1,0 +1,36 @@
+.tt_notice_container {
+  padding: 2.75rem 1.5rem 7.25rem;
+  background: url(/chengdu-shuohua-2017-03/activity/css/notice_top_bg.jpg) no-repeat 0 top, url(/chengdu-shuohua-2017-03/activity/css/notice_bottom_bg.jpg) no-repeat 0 bottom;
+  background-size: 100% auto;
+}
+.tt_notice_container header {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+.tt_notice_container dl {
+  margin-bottom: 0.2rem;
+}
+.tt_notice_container dl dt {
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  line-height: 0.95rem;
+  font-weight: bold;
+  color: #333;
+}
+.tt_notice_container dl dd {
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  line-height: 0.95rem;
+  color: #333;
+}
+.tt_notice_container footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  line-height: 2rem;
+  background: #14944A;
+  color: #fff;
+  border-radius: 1rem;
+  text-align: center;
+}

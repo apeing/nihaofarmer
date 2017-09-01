@@ -1,0 +1,111 @@
+html {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+body {
+  height: 100%;
+  font-size: 0.55rem;
+  line-height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.tt_ng_view_element {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #BFBFBF;
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide {
+  display: none !important;
+}
+.tt_base_group {
+  margin: 2rem 0.6rem 1.9rem;
+  padding-top: 0.325rem;
+  padding-bottom: 0.325rem;
+  position: relative;
+  background: #EF4A4E;
+}
+.tt_base_group .tt_title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.tt_base_group h3 {
+  position: relative;
+  display: inline-block;
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
+  height: 1.4rem;
+  font-size: 0.7rem;
+  line-height: 1.4rem;
+  background: #EF4A4E;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0.15rem 0.15rem 0.15rem 0 rgba(0, 0, 0, 0.2);
+}
+.tt_base_group h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.75rem;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-top: 1.4rem solid #EF4A4E;
+  border-left: 0.75rem solid transparent;
+  border-right: 0.1rem solid #EF4A4E;
+}
+.tt_base_group h3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -0.75rem;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 1.4rem solid #EF4A4E;
+  border-right: 0.75rem solid transparent;
+  border-left: 0.1rem solid #EF4A4E;
+}
+.tt_base_group section {
+  padding: 2rem 0.5rem 1rem;
+  border: 0.4rem solid #C24141;
+  background: #EAE0D4;
+}
+.tt_base_group.tt_yellow_group {
+  background: #FCAE42;
+}
+.tt_base_group.tt_yellow_group .tt_title h3 {
+  background: #FCAE42;
+}
+.tt_base_group.tt_yellow_group .tt_title h3::before {
+  border-top-color: #FCAE42;
+  border-right-color: #FCAE42;
+}
+.tt_base_group.tt_yellow_group .tt_title h3::after {
+  border-top-color: #FCAE42;
+  border-left-color: #FCAE42;
+}
+.tt_base_group.tt_yellow_group section {
+  border-color: #DBA05C;
+}

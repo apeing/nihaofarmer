@@ -1,0 +1,70 @@
+.tt_login_container {
+  min-height: 100%;
+  background: url(/wechat/activity/css/login_top_bg.jpg) no-repeat 0 top, url(/wechat/activity/css/login_bottom_bg.jpg) no-repeat 0 bottom;
+  background-size: 100% auto;
+}
+.tt_login_container .tt_content {
+  padding: 2.75rem 0.45rem 7.85rem;
+}
+.tt_login_container header {
+  padding-left: 0.3rem;
+  padding-right: 2.55rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #333;
+}
+.tt_login_container .tt_text_input {
+  margin-top: 1.1rem;
+  margin-bottom: 2.35rem;
+}
+.tt_login_container dl {
+  margin-top: 0.65rem;
+}
+.tt_login_container dl dt {
+  margin-left: 0.3rem;
+  font-size: 0.85rem;
+  line-height: 1.65rem;
+  color: #333;
+}
+.tt_login_container dl dd {
+  display: flex;
+  display: -webkit-flex;
+  padding: 0.2rem 0.3rem 0.2rem 0.6rem;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.tt_login_container dl input {
+  flex: 1;
+  -webkit-flex: 1;
+  font-size: 0.75rem;
+  line-height: 1.75rem;
+  color: #333;
+}
+.tt_login_container dl dd.tt_verify_con input {
+  margin-right: 0.5rem;
+  flex: 2;
+  -webkit-flex: 2;
+}
+.tt_login_container dl dd.tt_verify_con .tt_verify_box {
+  flex: 1;
+  -webkit-flex: 1;
+}
+.tt_login_container footer div {
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 2rem;
+  background: #14944A;
+  color: #fff;
+  border-radius: 1rem;
+  text-align: center;
+}
+.tt_login_container footer .tt_tips {
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  font-size: 0.65rem;
+  line-height: 0.85rem;
+  color: #333;
+}
+.tt_login_container footer .tt_tips a {
+  color: #EF4A4E;
+}

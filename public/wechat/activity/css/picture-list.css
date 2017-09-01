@@ -1,0 +1,377 @@
+/*手机端尺寸自适应尺寸文件，以640宽度，40px作为最小大小,1px=1/40rem*/
+html,
+body {
+  height: 100%;
+}
+.tt_picture_list_section {
+  height: 100%;
+  position: relative;
+}
+.tt_picture_list_section header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 0.6rem;
+  width: 100%;
+  background: #fff;
+}
+.tt_picture_list_section header p {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  border-bottom: 2px solid #ccc;
+}
+.tt_picture_list_section header span,
+.tt_picture_list_section header a {
+  font-size: 0.6rem;
+  line-height: 1.4rem;
+}
+.tt_picture_list_section header span {
+  color: #000;
+}
+.tt_picture_list_section header a {
+  color: #E64646;
+}
+.tt_picture_list_section .tt_content {
+  padding: 2.55rem 0.4rem 2.9rem;
+}
+.tt_picture_list_section .tt_content ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.tt_picture_list_section .tt_content li {
+  margin-top: 0.2rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  background: #000;
+}
+.tt_picture_list_section .tt_content li img {
+  width: 100%;
+  height: 100%;
+}
+.tt_picture_list_section .tt_content .no_order_list {
+  margin-top: 2rem;
+  padding-top: 6rem;
+  text-align: center;
+  color: #303030;
+}
+.tt_picture_list_section .tt_content .no_order_list img {
+  width: 3.7rem;
+  height: 3.7rem;
+}
+.tt_picture_list_section .tt_content .no_order_list p {
+  padding-top: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  text-align: center;
+}
+.tt_picture_list_section footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2.55rem;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background: #fff;
+  border-top: 2px solid #E5E5E5;
+}
+.tt_picture_list_section footer a {
+  height: 1.7rem;
+  text-align: center;
+  font-size: 0.7rem;
+  line-height: 1.7rem;
+  border: 2px solid #e64646;
+  border-radius: 0.85rem;
+}
+.tt-upload-img a:first-child {
+  margin-right: 0.5rem;
+  padding: 0 2.3rem;
+  color: #fff;
+  background: #e64646;
+}
+.tt-upload-img a:last-child {
+  padding: 0 2.3rem;
+  color: #e64646;
+}
+.tt-upload-img2 {
+  text-align: center;
+}
+.tt-upload-img2 a {
+  display: inline-block;
+  padding: 0 2.3rem;
+  color: #e64646;
+  border: 1px solid #e64646;
+  background: #fff;
+}
+.tt-del-img a:first-child {
+  margin-right: 0.5rem;
+  padding: 0 2rem;
+  color: #e64646;
+}
+.tt-del-img a:last-child {
+  padding: 0 3rem;
+  color: #fff;
+  background: #e64646;
+}
+.img-check {
+  position: relative;
+}
+.img-check span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("../images/no_checked.png") no-repeat left top / cover;
+}
+.img-check .del_check {
+  background: url("../images/checked.png") no-repeat left top / cover;
+}
+/*loading*/
+#tt_loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+#tt_loading .tt_mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.7;
+}
+#tt_loading .tt_container_box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+#tt_loading .tt_container_box .tt_img_box {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+/* 点击查看大图 */
+#tt_show_picture_modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+#tt_show_picture_modal .tt_mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.9;
+}
+#tt_show_picture_modal .tt_container_box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: auto;
+}
+#tt_show_picture_modal .tt_container_box .tt_img_box {
+  min-height: 60%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+#tt_show_picture_modal .tt_container_box .switch-pic {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 0 0.5rem 0.5rem;
+}
+#tt_show_picture_modal .tt_container_box .switch-pic span {
+  display: inline-block;
+  width: 7.3rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #515151;
+  border: 1px solid #333333;
+  border-radius: 0.1rem;
+  background: #333333;
+}
+#tt_show_picture_modal .tt_container_box .switch-pic .active {
+  color: #fff;
+  border-color: #494949;
+}
+#tt_show_picture_modal .tt_container_box img {
+  width: 100%;
+}
+#tt_show_picture_modal .tt_container_box p {
+  margin: 0.3rem 0.8rem;
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+  color: #fff;
+}
+#tt_alert_message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+#tt_alert_message .tt_mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6;
+}
+#tt_alert_message .tt_container_box {
+  position: fixed;
+  z-index: 1000;
+  width: 50%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 35px 0 20px;
+  background-color: #FFFFFF;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+#tt_alert_message .tt_container_box img {
+  width: 40px;
+}
+#tt_alert_message .tt_container_box .tt_message {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2.7;
+  text-align: center;
+  color: #e64646;
+}
+.upload_img_number {
+  position: fixed;
+  left: 0;
+  top: 2.5rem;
+  right: 0;
+  margin: auto;
+  width: 7rem;
+  height: 1.5rem;
+  font-size: 0.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+#tt_confirm_messages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+}
+#tt_confirm_messages .tt_mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.7;
+}
+#tt_confirm_messages .weui-dialog {
+  position: fixed;
+  z-index: 5000;
+  width: 78%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+#tt_confirm_messages .weui-dialog__bd {
+  padding: 3em 0.8em;
+  font-size: 15px;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #333;
+}
+#tt_confirm_messages .weui-dialog__ft {
+  position: relative;
+  line-height: 48px;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+#tt_confirm_messages .weui-dialog__btn {
+  display: block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  color: #333;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+}
+#tt_confirm_messages .weui-dialog__btn:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid #adadad;
+  color: #adadad;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+#tt_confirm_messages .weui-dialog__ft:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #adadad;
+  color: #adadad;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
