@@ -1,0 +1,20 @@
+{
+  "name": "nihaofarmer",
+  "version": "1.0.0",
+  "description": "server farmer plam",
+  "main": "server.js",
+  "scripts": {
+    "test": "each \"test process\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "compression": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.9",
+    "serve-favicon": "^2.4.3",
+    "sha1": "^1.1.1"
+  }
+}
