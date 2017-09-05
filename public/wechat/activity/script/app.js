@@ -3,7 +3,7 @@
  */
 (function(angular){
     'use strict';
-    angular.module('activity',['ngRoute','ngCookies', 'LocalStorageModule'])
+    angular.module('activity',['ngRoute','ngCookies', 'LocalStorageModule','shareModule','ngFileUpload','angularQFileUpload'])
         .config(['$routeProvider','$compileProvider', 'localStorageServiceProvider', function ($routeProvider,$compileProvider, localStorageServiceProvider) {
             $routeProvider.when('/notice', {
                 templateUrl: 'view/notice.html',

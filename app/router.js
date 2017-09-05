@@ -5,6 +5,7 @@
 const express = require('express');
 const router = express.Router();
 
+router.use('/qiniu',require('./qiniu'));
 router.use('/wechat',require('./wechat'));
 
 module.exports = router;

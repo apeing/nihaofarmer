@@ -33,9 +33,10 @@
         }
         function init() {
             // 隐藏大图参看
+            $window.document.title = '活动照片';
+            busyIndicatorService.showBusyIndicator();
             $http.get('/wechat/user').then(function successFn(response){
                 $scope.mobile = response && response.data && response.data.mobile;
-                $window.document.title = '活动照片';
                 $http.get('/wechat/picture/' + $scope.mobile ).then(function successFn(response) {
                     $scope.pictures = response.data;
                     var arr = $scope.pictures;
@@ -49,15 +50,18 @@
                     });
                     $scope.del_img = 'init';
                     $scope.show_screen = true;
+              //      busyIndicatorService.hideBusyIndicator();
                 }, function errorFn(response) {
                     $scope.pictures = [];
                     var message = response.data.message || '获取活动照片失败';
                     alert(message);
                     $scope.del_img = 'init';
                     $scope.show_screen = true;
+              //      busyIndicatorService.hideBusyIndicator();
                 });
             }, function errorFn(response){
                 if (response.status === 401) return $window.location.replace('index.html#/login?returnUrl=' + encodeURIComponent($location.path()));
+              //  busyIndicatorService.hideBusyIndicator();
             });
         }
 

@@ -52,5 +52,6 @@ router.get('/user',function(req, res, next){
     });
 });
 
+router.use('/picture',require('./picture'));
 
 module.exports = router;

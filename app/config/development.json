@@ -1,0 +1,26 @@
+{
+  "qiniu":{
+    "accessKey":"TXXu7FXig6oU1gLNMGERucvQvYjMvoKKQs_WQjqe",
+    "secretKey":"VXN6Q0nf_b8MBv4fvsrCx2vCouxIdiRE-fO3lWkO",
+    "bucket":"test"
+  },
+  "wechat":{
+    "domain":"http://5307c5e1.nat123.net",
+    "appId":"wx3be48f286ee453ed",
+    "secretKey":"f4bb1590ae9bcafd437f0bb95f616e8b"
+  },
+  "db" : {
+    "host": "localhost:27017",
+    "name": "wechat",
+    "username": "wechat",
+    "password": "wechat",
+    "options": {
+      "server": {
+        "poolSize": 10,
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  }
+}
