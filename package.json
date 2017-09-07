@@ -17,5 +17,17 @@
     "qiniu": "^7.0.8",
     "serve-favicon": "^2.4.3",
     "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cdnizer": "^1.1.7",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-rev": "^8.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-usemin": "^0.3.28",
+    "supertest": "^3.0.0"
   }
 }

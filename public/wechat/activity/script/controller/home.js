@@ -137,6 +137,7 @@
                                         }
                                         //              busyIndicatorService.hideBusyIndicator();
                                         $scope.pictures.splice(0,0,{url:url});
+                                        init();
                                     }, function errorFn(response) {
                                         busyIndicatorService.hideBusyIndicator();
                                         var message = response.data.message || '出错了，请再试一下吧';
