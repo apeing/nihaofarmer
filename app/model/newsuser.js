@@ -35,4 +35,4 @@ if (mongoose.models.newsuser) {
     Nuser = mongoose.model('newsuser', NewsuerSchema, 'newsusers');
 }
 
-module.exports = Neuser;
+module.exports = Nuser;

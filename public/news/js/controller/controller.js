@@ -4,7 +4,6 @@
 	var app = angular.module('news.controller', []);
 	app.controller('indexCtrl', ['$scope', '$rootScope', '$http', 'cookie', '$window',
 		function($scope, $rootScope, $http, cookie, $window) {
-			var token = cookie.getCookie('token');
 			var username = cookie.getCookie('username')
 			/*$http.post('http://localhost:81/angular/news/index.php/login_api/auto_login', {
 				params: {
@@ -17,6 +16,8 @@
 					window.location.href = '#/login'
 				}
 			})*/
+			if(!username)
+				window.location.href = '#/login';
 			$scope.tabs = [{
 				name: '国内最新',
 				id: 1,
@@ -30,9 +31,9 @@
 				id: 3,
 				url: '#/index/thirdlist'
 			}, {
-				name: '登录',
+				name: '登出',
 				id: 4,
-				url: '#/login'
+				url: 'http://localhost/news/cookies.html'
 			}];
 			$rootScope.id = 1;
 			$scope.toggleTab = function(id, url) {
@@ -236,52 +237,29 @@
 	}]);
 	
 	app.controller('loginsCtrl', ['$scope', '$http', 'cookie', function($scope, $http, cookie) {
-		$scope.page1 = true
-			$scope.page2 = false
-			$scope.show = function(page) {
-				if(page == 1) {
-					$scope.page1 = true;
-					$scope.page2 = false;
-				} else if(page == 2) {
-					$scope.page2 = true;
-					$scope.page1 = false
-				}
-		}
 		$scope.login = function() {
-			console.log('username:' + $scope.username);
-			console.log('password:' + $scope.password);
-			$http.post('http://localhost/newsapi/register', {
-				params: {
-					username: $scope.username,
-					password: $scope.password
-				}
-			}).success(function(data) {
-				console.log(data);
-				if(data.code) {
-					cookie.setCookie('token', data.info.token);
-					cookie.setCookie('username', data.username);
-					window.location.href = "#/index/list"
-				}
-			})
-		}
+			$http.post('/newsapi/login',{'username': $scope.username, 'password':$scope.password}).then(function successFn() {
+					cookie.setCookie('username', $scope.username);
+					window.location.href = '#/index/list';
+			}, function errorFn() {
+				console.log("errorFn()");
+			});
+		};
+		$scope.register = function() {
+			window.location.href = '#/register';
+		};
 	}]);
 	app.controller('registerCtrl', ['$scope', '$http', 'cookie', function($scope, $http, cookie) {
 		$scope.register = function() {
-			console.log('username:' + $scope.username);
-			console.log('password:' + $scope.password);
-			$http.post('http://localhost/newsapi/register', {
-				params: {
-					username: $scope.username,
-					password: $scope.password
+			$http.post('/newsapi/register',{'username': $scope.username, 'password':$scope.password}).then(function successFn(data) {
+				console.log("data : " + JSON.stringify(data));
+				if(data.data.username) {
+					//	cookie.setCookie('token', data.info.token);
+					window.location.href = '#/login';
 				}
-			}).success(function(data) {
-				console.log(data);
-				if(data.code) {
-					cookie.setCookie('username', data.username);
-					cookie.setCookie('token', data.info.token);
-					window.location.href = '#/index/list';
-				}
-			})
+			}, function errorFn() {
+				console.log("errorFn()");
+			});
 		}
 	}]);
 	app.controller('settingCtrl', ['$scope', '$http', 'cookie', function($scope, $http, cookie) {
