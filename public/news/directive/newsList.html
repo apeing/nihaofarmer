@@ -9,7 +9,7 @@
 		</div>-->
 	</div>
 	<div class="weui-panel__bd">
-		<a ng-href="#/detail/{{channelId}}/{{$index}}" class="weui-media-box weui-media-box_appmsg" ng-repeat="new in news|filter:searchName|orderBy: new[type] :switchCp">
+		<a ng-href="{{news[$index].link}}" class="weui-media-box weui-media-box_appmsg" ng-repeat="new in news|filter:searchName|orderBy: new[type] :switchCp">
 
 			<div class="weui-media-box__hd" ng-show="new.havePic">
 				<img class="weui-media-box__thumb" ng-src="{{new.havePic?new.imageurls[0].url:'image/psb.webp.jpg'}}" alt="">

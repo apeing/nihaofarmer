@@ -2,9 +2,9 @@
 	<div class="swiper-wrapper">
 		<!--默认第一张显示一只猫^-^-->
 		<div class="swiper-slide"><a href="https://github.com/windiest"><img style="width: 100%;" src="image/psb.webp.jpg" /></a></div>
-		<div class="swiper-slide"><a ng-href="#/detail/{{channelId}}/{{swiperImg[0].id?swiperImg[0].id:0}}"><img style="width: 100%;" ng-src="{{swiperImg[0].imageurls[0].url?swiperImg[0].imageurls[0].url:'image/psb.webp.jpg'}}" /></a></div>
-		<div class="swiper-slide"><a ng-href="#/detail/{{channelId}}/{{swiperImg[1].id?swiperImg[1].id:0}}"><img style="width: 100%;" ng-src="{{swiperImg[1].imageurls[0].url?swiperImg[1].imageurls[0].url:'image/psb.webp.jpg'}}" /></a></div>
-		<div class="swiper-slide"><a ng-href="#/detail/{{channelId}}/{{swiperImg[2].id?swiperImg[2].id:0}}"><img style="width: 100%;" ng-src="{{swiperImg[2].imageurls[0].url?swiperImg[2].imageurls[0].url:'image/psb.webp.jpg'}}" /></a></div>
+		<div class="swiper-slide"><a ng-href="{{swiperImg[0].link?swiperImg[0].link:'#/'}}"><img style="width: 100%;" ng-src="{{swiperImg[0].imageurls[0].url?swiperImg[0].imageurls[0].url:'image/psb.webp.jpg'}}" /></a></div>
+		<div class="swiper-slide"><a ng-href="{{swiperImg[1].link?swiperImg[1].link:'#/'}}"><img style="width: 100%;" ng-src="{{swiperImg[1].imageurls[0].url?swiperImg[1].imageurls[0].url:'image/psb.webp.jpg'}}" /></a></div>
+		<div class="swiper-slide"><a ng-href="{{swiperImg[2].link?swiperImg[2].link:'#/'}}"><img style="width: 100%;" ng-src="{{swiperImg[2].imageurls[0].url?swiperImg[2].imageurls[0].url:'image/psb.webp.jpg'}}" /></a></div>
 		<!--<div class="swiper-slide">Hello I.m wscat</div>
             <div class="swiper-slide">https://github.com/Wscats</div>
             <div class="swiper-slide"><img style="width: 100%;" src="image/psb.webp.jpg" /></div>-->

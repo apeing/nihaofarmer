@@ -19,15 +19,15 @@
 			if(!username)
 				window.location.href = '#/login';
 			$scope.tabs = [{
-				name: '国内最新',
+				name: '头条新闻',
 				id: 1,
 				url: '#/index/list'
 			}, {
-				name: '国际焦点',
+				name: '国内新闻',
 				id: 2,
 				url: '#/index/secondlist'
 			}, {
-				name: '游戏焦点',
+				name: '国际新闻',
 				id: 3,
 				url: '#/index/thirdlist'
 			}, {
@@ -60,13 +60,14 @@
 		//轮播图的三张图片
 		$scope.swiperImg = [];
 		var load = function() {
-			$http.get(apiUrl).success(function(data) {
+			$http.get(apiUrl,{params: {type:"top"}}).success(function(data) {
 					//测试数据，发布时删除
 					$scope.isShow = true;
-					console.log("success data : " + data);
+				//	console.log("success data : " + JSON.stringify(data));
 					$scope.news = $scope.news.concat(data.showapi_res_body.pagebean.contentlist);
 					//用swiperImg自定义服务获取三张图片
 					$scope.swiperImg = swiperImg.get($scope.news);
+					console.log("swiperimg : " + JSON.stringify($scope.swiperImg[0]));
 				}).error(function(data){
 					//测试数据，发布时删除
 					console.log("err data : " + data);
@@ -109,10 +110,10 @@
 			$scope.swiperImg = [];
 			$scope.news = [];
 			var load = function() {
-				$http.get(apiUrl).success(function(data) {
+				$http.get(apiUrl,{params: {type:"guoji"}}).success(function(data) {
 					//测试数据，发布时删除
 					$scope.isShow = true;
-					console.log("success data : " + data);
+					//	console.log("success data : " + JSON.stringify(data));
 					$scope.news = $scope.news.concat(data.showapi_res_body.pagebean.contentlist);
 					//用swiperImg自定义服务获取三张图片
 					$scope.swiperImg = swiperImg.get($scope.news);
@@ -120,7 +121,7 @@
 					//测试数据，发布时删除
 					console.log("err data : " + data);
 				});
-				};
+			};
 				//第一次进来的时候自执行加载数据
 			load();
 			//默认搜索内容
@@ -157,10 +158,10 @@
 			$scope.swiperImg = [];
 			$scope.news = [];
 			var load = function() {
-				$http.get(apiUrl).success(function(data) {
+				$http.get(apiUrl,{params: {type:"guonei"}}).success(function(data) {
 					//测试数据，发布时删除
 					$scope.isShow = true;
-					console.log("success data : " + data);
+					//	console.log("success data : " + JSON.stringify(data));
 					$scope.news = $scope.news.concat(data.showapi_res_body.pagebean.contentlist);
 					//用swiperImg自定义服务获取三张图片
 					$scope.swiperImg = swiperImg.get($scope.news);
@@ -168,7 +169,7 @@
 					//测试数据，发布时删除
 					console.log("err data : " + data);
 				});
-				};
+			};
 				//第一次进来的时候自执行加载数据
 			load();
 			//默认搜索内容
