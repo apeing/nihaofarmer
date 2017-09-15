@@ -13,6 +13,7 @@
     "compression": "^1.7.0",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
+    "moment": "^2.18.1",
     "mongoose": "^4.6.3",
     "qiniu": "^7.0.8",
     "request": "^2.81.0",

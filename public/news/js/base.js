@@ -47,5 +47,5 @@ app.value('apiUrl','http://localhost/newsapi/data');
 //设置api请求的方法，发布时候用jsonp，get只是请求用来请求测试的json文件～
 app.value('apiMethod','get');
 //测试数据
-var news = json;
-console.log(news);
+//var news = json;
+//console.log(news);

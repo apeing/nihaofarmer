@@ -67,7 +67,6 @@
 					$scope.news = $scope.news.concat(data.showapi_res_body.pagebean.contentlist);
 					//用swiperImg自定义服务获取三张图片
 					$scope.swiperImg = swiperImg.get($scope.news);
-					console.log("swiperimg : " + JSON.stringify($scope.swiperImg[0]));
 				}).error(function(data){
 					//测试数据，发布时删除
 					console.log("err data : " + data);
