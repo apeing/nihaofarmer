@@ -30,5 +30,7 @@ var path = require('path');
 app.use(express.static(path.join(__dirname, './public')));
 
 app.use('/', require('./app/router.js'));
+app.use('/wx',require('./app/weixin/index.js'));
+app.use('/wxapi',require('./app/weixin/api.js'));
 
 module.exports = app;

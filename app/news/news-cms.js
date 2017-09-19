@@ -15,31 +15,29 @@ var request = require('request');
 var co = require('co');
 
 router.get('/updata',function(req,res,next){
-    var type = req.query.type;
+ //   var type = req.query.type;
     var types = ['top','guonei','guoji'];
     async.map(types,function(item,callback){
-        request.get({url:'http://toutiao-ali.juheapi.com/toutiao/index?type=' + item,headers:{'Content-Type':'application/json','Authorization':'APPCODE 5a95cb4d848141b88a8ba8079bcd1f1e'}},
+        request.get({url:'http://toutiao-ali.juheapi.com/toutiao/index?type=' + item,headers:{'Content-Type':'application/json','Authorization':'APPCODE 084e91dd72a045148bd5707dd8ea598d'}},
             function(error, response, body){
                 if(error){
                     return callback(error);
                 }
                 if(response.statusCode == 200){
-                    co.wrap(function* (){
-                        var bodyjson = JSON.parse(body);
-                        bodyjson.result.data.forEach(function(item){
-                            mdata.find({'date':{'$gte':item.date}},function(err,result){
-                                if(err) return ;
-                                if(result.length) return;
-                                mdata.create(item,function(err2, dataresult){
-                                    if(err2) return;
-                                });
+                    var bodyjson = JSON.parse(body);
+                    async.map(bodyjson.result.data,function(item2,cb){
+                        mdata.find({'date':{'$gte':item2.date}},function(err,result){
+                            if(err) return cb(err);
+                            if(result.length) return cb(null,{err:"没有数据"});
+                            mdata.create(item2,function(err2, dataresult){
+                                if(err2) return;
+                                cb(null,{item:item2});
                             });
                         });
-                    })().then(function(){
-                        setTimeout(function(){
-                            callback(null,{msg:"ok"});
-                        },200);
-                    }).catch(next);
+                    },function(err2,result){
+                        if(err2) return callback(err2);
+                        callback(null,{type:item,length:result.length});
+                    });
                 }else {
                     callback(null,{});
                 }

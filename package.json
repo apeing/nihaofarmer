@@ -18,7 +18,8 @@
     "qiniu": "^7.0.8",
     "request": "^2.81.0",
     "serve-favicon": "^2.4.3",
-    "sha1": "^1.1.1"
+    "sha1": "^1.1.1",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
