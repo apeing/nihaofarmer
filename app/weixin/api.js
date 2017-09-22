@@ -45,10 +45,12 @@ router.get('/menu_list', function(req, res, next) {
     });
 });
 
-router.get('/menu_create', function(req, res, next) {
-    var key = req.query.key;
-    var form = !!key ? aotuConfig[key] : aotuConfig['menu'];
-    var url = !!key ? 'https://api.weixin.qq.com/cgi-bin/menu/addconditional?access_token=' : 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token=';
+router.post('/menu_create', function(req, res, next) {
+    var key = req.body.key;
+    //console.log("key : " + key);
+    //console.log("key.button : " + key.button);
+    //var form = !!key ? aotuConfig[key] : aotuConfig['menu'];
+    var url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token=';
 
     util.getToken(aotuConfig, function(result) {
         if (result.err) {
@@ -57,9 +59,10 @@ router.get('/menu_create', function(req, res, next) {
         var access_token = result.data.access_token;
         request.post({
             url: url + access_token,
-            form: JSON.stringify(form)
+            form: JSON.stringify(key)
         }, function(error, response, body) {
             if (!error) {
+                console.log("body : " + body);
                 return res.status(200).send(JSON.parse(body));
             }
             return res.status(500).send('创建菜单失败');

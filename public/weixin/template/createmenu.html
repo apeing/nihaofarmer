@@ -1,0 +1,59 @@
+<div>
+    <!--<input class="weui_input" type="tel" ng-model="menu" placeholder="menujson"/>-->
+    <div class="row">
+        <div ng-if="keys.length <= 2" class="col-xs-6">
+            <button  type="button" class="btn btn-success" ng-click="add()" ng-disabled="(addtag||seltag)">  添加菜单  </button>
+        </div>
+        <div class="col-xs-6">
+            <button class="btn btn-warning" ng-click="createmenu()" ng-disabled="(addtag||seltag)">  发布菜单  </button>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-4" ng-repeat="key in keys track by $index" ng-init="outerIndex = $index;">
+            <div ng-if="keys.length <= 2">
+                <button  class="btn btn-sm btn-warning" ng-click="addchild($index)" ng-disabled="(addtag||seltag)">添加子菜单</button>
+            </div>
+            <button class="btn btn-info" ng-click="sel($index)" ng-disabled="(addtag||seltag)">{{key.name}}</button>
+            <div ng-repeat="child in key.sub_button track by $index">
+                <button class="btn btn-info" ng-click="selchild(outerIndex,$index)" ng-disabled="(addtag||seltag)">{{child.name}}</button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10" ng-show="addtag">
+            <select  ng-model="select2.type" ng-options="opt.type as opt.type for opt in opts">
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;<label> {{menu_num}} </label>
+            <br/>
+            <label>name : </label>
+            <input type="text" ng-model="name" placeholder="name"/>
+            <br/>
+            <label>{{select2.value}} : </label>
+            <input type="text" ng-model="zhi" placeholder="zhi"/>
+            <br/>
+            <button type="button" class="btn btn-sm btn-warning" ng-click="revert()">  返回  </button>
+                <button class="btn btn-sm btn-success" ng-click="save()">  保存  </button>
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10" ng-show="seltag">
+            <select  ng-model="select3.type" ng-options="opt.type as opt.type for opt in opts">
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;<label> {{menu_num}} </label>
+            <br/>
+            <label>name : </label>
+            <input type="text" ng-model="name" placeholder="name"/>
+            <br/>
+            <label>{{select3.value}} : </label>
+            <input type="text" ng-model="zhi" placeholder="zhi"/>
+            <br/>
+            <button type="button" class="btn btn-sm btn-warning" ng-click="revert()">  返回  </button>
+            <button class="btn btn-sm btn-success" ng-click="revisemenu(menu_num)">  确定修改  </button>
+            <button type="button" class="btn btn-sm btn-danger" ng-click="deletemenu(menu_num)">  删除  </button>
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+</div>
